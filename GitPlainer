@@ -1,5 +1,18 @@
 #!/bin/bash
-s
+
+#This script purpose is to explain how the workflow of github works
+#And set up the databases (files) that will be encrypted and pin protected to set up the workflow automation
+#The goal is to make the commands go automatic with the console prompting what files we want to add,
+#and what description we want to use in the commit. 
+#To facilitate the use of the token it will be stored in a password/pin protected file. 
+#It will lower the protection, but i am lazy (about repetive tasks) and i want to explore bash scripting
+
+#To-Do
+#Add a promp "press any key to continue" so the list doesnt push the text up while i am reading the explanations
+#Consider remove the list time intervals and add to explanations instead
+#Create condition for the variables to check if the template file exist. If it does use it as user.
+#Add comments to explain everything in the code so it can also be a source to learn 
+
 #variable user
 user=$(whoami)
 hostname=Alfred
@@ -32,7 +45,7 @@ fi
 
 #Host name
 echo ""
-echo "Hi, $user i am going to help you through this journey on your first steps using GitHub" 
+echo "Hi $user, i am going to help you through this journey on your first steps using GitHub" 
 sleep 1
 echo ""
 read -p "I think my name is $hostname, but i am not sure. Is my name correct?(y/n)" answer2
@@ -79,6 +92,10 @@ while true; do
       ;;
     1)
       echo ""
+      echo "######################"
+      echo "## 1. Git Workflow  ##"
+      echo "######################"
+      echo ""
       echo "The workflow in git is:"
       echo "Pull > edit your project > Add > Commit > Push"
       echo "The ACT workflow refers only to the Add > Commit > Push"
@@ -92,8 +109,16 @@ while true; do
       sleep 1
       echo "Great! Lets move on, shall we?"
       sleep 1
+      echo ""
+      echo "################################"
+      echo ""
       ;;
     2)
+      echo ""
+      echo "#################################"
+      echo "## 2. Update Local repository  ##"
+      echo "#################################"
+      echo ""
       echo "To update our local repository we use the command <git pull>"
       echo "This command will fetch and merge the changes from the remote repository to our local repository"
       echo ""
@@ -102,8 +127,15 @@ while true; do
       sleep 1
       echo "Great! Lets move on, shall we?"
       sleep 1
+      echo ""
+      echo "################################"
+      echo ""
       ;;
     3)
+      echo ""
+      echo "#################"
+      echo "## 3. Git add  ##"
+      echo "#################"
       echo ""
       echo "After we make the changes to files we need to add it to the staging area."
       echo "For that we use the command: git add <file_name>"
@@ -116,8 +148,15 @@ while true; do
       sleep 1
       echo "Great! Lets move on, shall we?"
       sleep 1
+      echo ""
+      echo "################################"
+      echo ""
       ;;
     4)
+      echo ""
+      echo "####################"
+      echo "## 4. Git status  ##"
+      echo "####################"
       echo ""
       echo "The command: <git status> allows you to see what files are being tracked or not"
       echo "The files that are being tracked will be committed and the untracked files will not"
@@ -129,48 +168,102 @@ while true; do
       sleep 1
       echo "Great! Lets move on, shall we?"
       sleep 1
+      echo ""
+      echo "################################"
+      echo ""
       ;;
     5)
+      echo ""
+      echo "####################"
+      echo "## 5. Git commit  ##"
+      echo "####################"
+      echo ""
       echo "The <git commit> command allows you to commit the changes you tracked with the command <git add>"
       echo "It's best practices to use the flag -m to give a description of the changes you have made"
       echo ""
       sleep 1
       echo "Great! Lets move on, shall we?"
       sleep 1
-      ;;
-    5)
-      echo "When we use the <git log> the terminal will shows us the commit history and they versions"
-      echo "That version number is a SHA-1 hash (hexadecimal number) and works like a license plate or an id number"
       echo ""
-      echo ""
+      echo "################################"
       echo ""
       ;;
     6)
       echo ""
+      echo "#################"
+      echo "## 6. Git log  ##"
+      echo "#################"
       echo ""
+      echo "When we use the <git log> the terminal will shows us the commit history and they versions"
+      echo "That version number is a SHA-1 hash (hexadecimal number) and works like a license plate or an id number"
       echo ""
+      sleep 1
+      echo "Great! Lets move on, shall we?"
+      sleep 1
       echo ""
+      echo "################################"
       echo ""
       ;;
     7)
       echo ""
+      echo "##################"
+      echo "## 7. Git diff  ##"
+      echo "##################"
       echo ""
       echo ""
       echo ""
+      echo ""
+      echo ""
+      sleep 1
+      echo "Great! Lets move on, shall we?"
+      sleep 1
+      echo ""
+      echo "################################"
       echo ""
       ;;
     8)
       echo ""
+      echo "##################"
+      echo "## 8. Git push  ##"
+      echo "##################"
       echo ""
       echo ""
       echo ""
+      echo ""
+      echo ""
+      sleep 1
+      echo "Great! Lets move on, shall we?"
+      sleep 1
+      echo ""
+      echo "################################"
       echo ""
       ;;
     9)
       echo ""
+      echo "######################"
+      echo "## 9. Set your key  ##"
+      echo "######################"
       echo ""
+      echo "I will list all the steps so you can generate your own keys:"
+      echo "	1. Log in to GitHub"
+      sleep 1
+      echo "	2. Click in your profile picture in the top right corner"
+      sleep 1
+      echo "	3. Click on \"Settings\""
+      sleep 1
+      echo "	4. In the left menu, click on \"Developer settings\""
+      sleep 1
+      echo "	5. Again in the left menu of this new page click on \"Personal access tokens\""
+      sleep 1
+      echo "	6. Choose \"Tokens(classis)\""
+      sleep 1
+      echo "	7. Generate the new key"
       echo ""
+      sleep 1
+      echo "Great! Lets move on, shall we?"
+      sleep 1
       echo ""
+      echo "################################"
       echo ""
       ;;
     *)
