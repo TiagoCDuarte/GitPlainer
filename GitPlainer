@@ -13,6 +13,15 @@
 #Create condition for the variables to check if the template file exist. If it does use it as user.
 #Add comments to explain everything in the code so it can also be a source to learn 
 
+echo "Created by:"
+echo " _____ _                   "
+echo "/__   (_) __ _  __ _  ___  "
+echo "  / /\/ |/ _` |/ _` |/ _ \ "
+echo " / /  | | (_| | (_| | (_) |"
+echo " \/   |_|\__,_|\__, |\___/ "
+echo "               |___/       "
+
+
 #variable user
 user=$(whoami)
 hostname=Alfred
