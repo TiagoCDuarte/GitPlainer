@@ -2,10 +2,12 @@
 
 #This script purpose is to explain how the workflow of github works
 #And set up the databases (files) that will be encrypted and pin protected to set up the workflow automation
+
 #The goal is to make the commands go automatic with the console prompting what files we want to add,
 #and what description we want to use in the commit. 
-#To facilitate the use of the token it will be stored in a password/pin protected file. 
-#It will lower the protection, but i am lazy (about repetive tasks) and i want to explore bash scripting
+
+#To facilitate the use of the token it will be stored in a password/pin protected file. Which will lower the protection, 
+#but it will eb boring to be always looking up for the token and i want to explore bash scripting
 
 #To-Do
 #Add a promp "press any key to continue" so the list doesnt push the text up while i am reading the explanations
@@ -37,7 +39,7 @@ sleep 1
 echo "$user"
 sleep 1
 echo ""
-read -p "Does this user match your GitHub username?(y/n)" answer
+read -p "Does this $user match your GitHub username?(y/n)" answer
 
 if [ "$answer" = "n" ]; then
   read -p "What is your user name then? " user
