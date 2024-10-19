@@ -1,0 +1,181 @@
+#!/bin/bash
+s
+#variable user
+user=$(whoami)
+hostname=Alfred
+
+#Code Body
+
+echo "Computer name detected..."
+sleep 1
+echo "$(hostname)"
+sleep 1
+echo "Username detected..."
+sleep 1
+echo "$user"
+sleep 1
+echo ""
+read -p "Does this user match your GitHub username?(y/n)" answer
+
+if [ "$answer" = "n" ]; then
+  read -p "What is your user name then? " user
+  echo "Let's proceed $user"
+  rm GitHub_User.txt
+  echo "$user" > GitHub_User.txt
+elif [ "$answer" = "y" ]; then
+  echo "Let's proceed $user"
+else
+  echo "I am sorry, I didn’t catch your answer. For 'yes' type 'y' and for 'no' type 'n'. Start over again"
+  echo ""
+  exit 
+fi
+
+#Host name
+echo ""
+echo "Hi, $user i am going to help you through this journey on your first steps using GitHub" 
+sleep 1
+echo ""
+read -p "I think my name is $hostname, but i am not sure. Is my name correct?(y/n)" answer2
+
+if [ "$answer2" = "n" ]; then
+  read -p "What is my name then? " hostname 
+  echo "You are right! My name is $hostname. Let's proceed $user"
+elif [ "$answer2" = "y" ]; then
+echo ""
+  echo "Let's proceed $user"
+  echo ""
+else
+  echo "I am sorry, I didn’t catch your answer. For 'yes' type 'y' and for 'no' type 'n'. Start over again"
+  echo ""
+  exit 1
+fi
+
+
+echo "Here are the topics that I can help you with:"
+while true; do
+  echo "1. Git Workflow"
+  sleep 0.5
+  echo "2. Update Local repository"
+  sleep 0.5
+  echo "3. Git add"
+  sleep 0.5
+  echo "4. Git status"
+  sleep 0.5
+  echo "5. Git commit"
+  sleep 0.5
+  echo "6. Git log"
+  sleep 0.5
+  echo "7. Git diff"
+  sleep 0.5
+  echo "8. Git push"
+  sleep 0.5
+  echo "9. Set your key"
+  sleep 0.5
+  echo "0. Exit"
+  read -p "Which topic you want to learn about? " choice
+  case $choice in
+    0)
+      exit
+      ;;
+    1)
+      echo ""
+      echo "The workflow in git is:"
+      echo "Pull > edit your project > Add > Commit > Push"
+      echo "The ACT workflow refers only to the Add > Commit > Push"
+      echo ""
+      echo "To illustrate add will work like putting items in the shopping cart"
+      echo "The commit like going to pay"
+      echo "And the push when you are showing to your friends what you bought"
+      echo ""
+      echo "We are going to explore more in depth what is each of those parts in the other topics"
+      echo ""
+      sleep 1
+      echo "Great! Lets move on, shall we?"
+      sleep 1
+      ;;
+    2)
+      echo "To update our local repository we use the command <git pull>"
+      echo "This command will fetch and merge the changes from the remote repository to our local repository"
+      echo ""
+      echo "Documentation: git pull: https://git-scm.com/docs/git-pull"
+      echo ""
+      sleep 1
+      echo "Great! Lets move on, shall we?"
+      sleep 1
+      ;;
+    3)
+      echo ""
+      echo "After we make the changes to files we need to add it to the staging area."
+      echo "For that we use the command: git add <file_name>"
+      echo "The staging area is a tool that allows you to choose which files you are going to commit in the next step."
+      echo "Using it you don't have the risk to commit to your repository something you don't want."
+      echo ""
+      echo "Documentation: https://git-scm.com/about/staging-area"
+      echo "Note: You can jump over this step by including the flag -a in the command: git commit"
+      echo ""
+      sleep 1
+      echo "Great! Lets move on, shall we?"
+      sleep 1
+      ;;
+    4)
+      echo ""
+      echo "The command: <git status> allows you to see what files are being tracked or not"
+      echo "The files that are being tracked will be committed and the untracked files will not"
+      echo "If you want to remove a file from the tracked list use the command: git restore --staged <file_name>"
+      echo ""
+      echo "Documentation: git status: https://git-scm.com/docs/git-status"
+      echo "Documentation: git restore: https://git-scm.com/docs/git-restore"
+      echo ""
+      sleep 1
+      echo "Great! Lets move on, shall we?"
+      sleep 1
+      ;;
+    5)
+      echo "The <git commit> command allows you to commit the changes you tracked with the command <git add>"
+      echo "It's best practices to use the flag -m to give a description of the changes you have made"
+      echo ""
+      sleep 1
+      echo "Great! Lets move on, shall we?"
+      sleep 1
+      ;;
+    5)
+      echo "When we use the <git log> the terminal will shows us the commit history and they versions"
+      echo "That version number is a SHA-1 hash (hexadecimal number) and works like a license plate or an id number"
+      echo ""
+      echo ""
+      echo ""
+      ;;
+    6)
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      ;;
+    7)
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      ;;
+    8)
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      ;;
+    9)
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      ;;
+    *)
+      echo "Invalid option. Please select a number from the list."
+      ;;
+  esac
+done
+
