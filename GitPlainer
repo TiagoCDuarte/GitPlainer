@@ -10,6 +10,7 @@
 #but it will eb boring to be always looking up for the token and i want to explore bash scripting
 
 #To-Do
+#Check for syntax on how to add colours to give examples for the heads and mains for case 6 git log
 #Add a promp "press any key to continue" so the list doesnt push the text up while i am reading the explanations
 #Consider remove the list time intervals and add to explanations instead
 #Create condition for the variables to check if the template file exist. If it does use it as user.
