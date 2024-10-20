@@ -26,9 +26,22 @@ echo "               |___/       "
 
 
 #variable user
+if [-f "GitHub_User.txt"]; then
+  user=$(cat GitHub_User.txt)
+else
 user=$(whoami)
+  exit 
+fi
+
 hostname=Alfred
 
+#The -f will return true if the file exists https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
+if [-f "GitHub_User.txt"]; then
+  user=$(cat GitHub_Hostname.txt)
+else
+hostname=Alfred
+  exit 
+fi
 #Code Body
 
 echo "Computer name detected..."
@@ -64,6 +77,8 @@ read -p "I think my name is $hostname, but i am not sure. Is my name correct?(y/
 
 if [ "$answer2" = "n" ]; then
   read -p "What is my name then? " hostname 
+  rm GitHub_User.txt
+  echo "$hostname " > GitHub_Hostname.txt
   echo "You are right! My name is $hostname. Let's proceed $user"
 elif [ "$answer2" = "y" ]; then
 echo ""
@@ -222,9 +237,9 @@ while true; do
       echo "## 7. Git diff  ##"
       echo "##################"
       echo ""
+      echo "This command will show the differences between commits"
       echo ""
-      echo ""
-      echo ""
+      echo "Documentation: git diff: https://git-scm.com/docs/git-diff"
       echo ""
       sleep 1
       echo "Great! Lets move on, shall we?"
@@ -239,9 +254,10 @@ while true; do
       echo "## 8. Git push  ##"
       echo "##################"
       echo ""
+      echo "The command \"git push\" will send the commited changes from your local repository to the remote repository"
+      echo "This upload will result in a synchronization of the files"
       echo ""
-      echo ""
-      echo ""
+      echo "Documentation: git push: https://git-scm.com/docs/git-push"
       echo ""
       sleep 1
       echo "Great! Lets move on, shall we?"
