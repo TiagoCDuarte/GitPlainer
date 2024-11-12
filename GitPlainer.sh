@@ -26,22 +26,22 @@ echo "               |___/       "
 
 
 #variable user
-if [-f "GitHub_User.txt"]; then
-  user=$(cat GitHub_User.txt)
-else
-user=$(whoami)
-  exit 
-fi
+#if [-f "GitHub_User.txt"]; then
+#  user=$(cat GitHub_User.txt)
+#else
+#user=$(whoami)
+#  exit 
+#fi
 
 hostname=Alfred
 
 #The -f will return true if the file exists https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
-if [-f "GitHub_User.txt"]; then
-  user=$(cat GitHub_Hostname.txt)
-else
-hostname=Alfred
-  exit 
-fi
+#if [-f "GitHub_User.txt"]; then
+#  user=$(cat GitHub_Hostname.txt)
+#else
+#hostname=Alfred
+#  exit 
+#fi
 #Code Body
 
 echo "Computer name detected..."
